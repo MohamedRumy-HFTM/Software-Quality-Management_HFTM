@@ -6,6 +6,9 @@ Das Rechner-Beispiel aus dem HFTM-Kurs verwendet Java 17, Maven und JUnit 5.
 Es unterstützt Addition, Subtraktion, Multiplikation und Division. Bei Division
 durch null wird eine `ArithmeticException` ausgelöst.
 
+Die bestätigten Ergebnisse stehen in [NACHWEIS.md](NACHWEIS.md), der persönliche
+Kommentar als anpassbarer Entwurf in [ABGABE.md](ABGABE.md).
+
 ## Lokal ausführen
 
 Voraussetzungen: JDK 17 oder neuer und Maven 3.9.x. Die Befehle im Ordner mit der
@@ -40,8 +43,8 @@ Maven ist auf dem GitHub-gehosteten Runner bereits vorhanden. Der Job läuft
 direkt auf dem Runner; es ist kein eigener Docker-Container konfiguriert.
 `permissions: contents: read` beschränkt die Berechtigungen des Workflow-Tokens.
 
-Ein fehlgeschlagener Test lässt Maven mit einem Fehlercode enden. Damit wird auch
-der Build-Schritt und der gesamte Actions-Lauf rot. Ein erfolgreiches Hochladen
+Ein fehlgeschlagener Test lässt Maven mit einem Fehlercode enden. Damit werden
+auch der Build-Schritt und der gesamte Actions-Lauf rot. Ein erfolgreiches Hochladen
 der Fehlerberichte ändert diesen Status nicht. Benachrichtigungen hängen von den
 persönlichen GitHub-Einstellungen ab.
 
@@ -65,7 +68,7 @@ im Test, kein Syntax- oder Kompilierungsfehler.
 JaCoCo misst beim Testlauf die ausgeführten Codepfade und erstellt bei `verify`
 einen Bericht unter `target/site/jacoco/index.html`. Nach einem erfolgreichen
 GitHub-Lauf lässt sich das Artefakt **test-and-coverage-reports** herunterladen,
-entpacken und die darin enthaltene `index.html` öffnen. Die Berichte werden
+entpacken und `site/jacoco/index.html` öffnen. Die Berichte werden
 14 Tage aufbewahrt.
 
 Bei einem fehlgeschlagenen Unit-Test bricht Maven vor `verify` ab. In diesem Fall
